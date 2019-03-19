@@ -209,7 +209,7 @@ class LocalizationUtility
                 $locales = GeneralUtility::makeInstance(Locales::class);
                 if (in_array($languageKeys['languageKey'], $locales->getLocales())) {
                     foreach ($locales->getLocaleDependencies($languageKeys['languageKey']) as $language) {
-                        $languageKeys['alternativeLanguageKeys'] = $language;
+                        $languageKeys['alternativeLanguageKeys'][] = $language;
                     }
                 }
             }
